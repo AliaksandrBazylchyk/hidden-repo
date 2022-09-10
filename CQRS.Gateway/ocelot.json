@@ -1,0 +1,15 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "movies",
+      "Config": [
+        {
+          "Name": "Movies API",
+          "Version": "v1",
+          "Url": "http://movies_service/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "Routes": []
+}
