@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Infrastructure\Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enums", "Infrastructure\Enums\Enums.csproj", "{1CC1409D-8778-4C2F-9547-0A9B992F9C3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService", "Services\CatalogService\CatalogService.csproj", "{6D92E7CE-8F5C-4508-BF52-735383693124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{1CC1409D-8778-4C2F-9547-0A9B992F9C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CC1409D-8778-4C2F-9547-0A9B992F9C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CC1409D-8778-4C2F-9547-0A9B992F9C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D92E7CE-8F5C-4508-BF52-735383693124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D92E7CE-8F5C-4508-BF52-735383693124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D92E7CE-8F5C-4508-BF52-735383693124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D92E7CE-8F5C-4508-BF52-735383693124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{DF0C0384-09DE-47E6-95C9-9EA5C5DE7F27} = {6ECF05D5-D72B-4D06-93FC-881D554F274E}
 		{3EBAFE6D-5957-4755-B185-DE54F5B020EE} = {9BA7F735-9CDF-4057-A104-B90B5ED28EF4}
 		{1CC1409D-8778-4C2F-9547-0A9B992F9C3F} = {9BA7F735-9CDF-4057-A104-B90B5ED28EF4}
+		{6D92E7CE-8F5C-4508-BF52-735383693124} = {DE4C7A2F-1B10-4713-BC9E-D9152490A4F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {813A4896-E296-4E1E-9B12-09A1ADC4541C}

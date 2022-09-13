@@ -1,7 +1,8 @@
 ﻿using Core.Outbox;
 using Core.Repository;
 using DatabaseExtensions;
-using Models;
+using Models.Entities;
+using Models.OutboxEntities;
 
 namespace Core.Aggregate
 {

@@ -1,7 +1,7 @@
 ﻿using Core.Exceptions;
 using DatabaseExtensions;
 using Microsoft.EntityFrameworkCore;
-using Models;
+using Models.OutboxEntities;
 using Newtonsoft.Json;
 
 namespace Core.Outbox

@@ -1,6 +1,6 @@
 ﻿namespace Core.RabbitMq
 {
-    internal static class QueuesHelpers
+    public static class QueuesHelpers
     {
         public static string CREATEQUEUE = "create_cqrs_queue";
         public static string DELETEQUEUE = "delete_cqrs_queue";

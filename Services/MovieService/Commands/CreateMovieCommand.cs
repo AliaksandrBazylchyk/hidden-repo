@@ -1,7 +1,8 @@
 ﻿using Commands;
 using Core;
 using Core.Aggregate;
-using Models;
+using Models.Entities;
+using Models.OutboxEntities;
 
 namespace MovieService.Commands
 {

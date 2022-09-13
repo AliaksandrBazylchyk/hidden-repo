@@ -1,6 +1,6 @@
 ﻿using Enums;
 
-namespace Models
+namespace Models.OutboxEntities
 {
     public class BaseOutbox
     {

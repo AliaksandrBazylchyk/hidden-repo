@@ -14,3 +14,9 @@ services:
     ports:
       - "80"
 
+
+  catalogservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

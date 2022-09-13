@@ -2,7 +2,7 @@
 using Core.RabbitMq;
 using Enums;
 using Microsoft.AspNetCore.Mvc;
-using Models;
+using Models.OutboxEntities;
 using Newtonsoft.Json;
 using Quartz;
 
@@ -36,7 +36,8 @@ namespace MovieService.Jobs
                         if (result.IsCompletedSuccessfully)
                         {
                             await _outboxStore.CommitRecordAsync(record.Id);
-                            _logger.LogInformation("Object sended for creating: ", JsonConvert.SerializeObject(record).ToString());
+                            _logger.LogInformation("Object sended for creating: ", record.Object);
+                            await _outboxStore.CommitRecordAsync(record.Id);
                         }
                         else
                         {

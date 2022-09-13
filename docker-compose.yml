@@ -24,6 +24,18 @@ services:
     depends_on:
       - consul
 
+  catalogservice:
+    image: ${DOCKER_REGISTRY-}catalogservice
+    container_name: catalog_service
+    ports:
+      #- "6002:443"
+      - "6003:80"
+    build:
+      context: .
+      dockerfile: Services/CatalogService/Dockerfile
+    depends_on:
+      - consul
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -101,4 +113,5 @@ volumes:
     name: rabbitmq-data-volue
   rabbitmqlogs:
     name: rabbitmq-logs-volume
+
 

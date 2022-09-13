@@ -1,16 +1,6 @@
-using Commands;
-using Core.Aggregate;
-using Core.Outbox;
-using Core.RabbitMq;
-using Core.Repository;
-using DatabaseExtensions;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using MovieService.Jobs;
 using Quartz;
-using Queries;
-using System.Reflection;
+using ServiceExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,20 +8,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCore();
 
-builder.Services.AddScoped<ICommandBus, CommandBus>();
-builder.Services.AddScoped<IQueryBus, QueryBus>();
+builder.Services.AddRabbitMq();
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped(typeof(IOutboxStore<>), typeof(OutboxStore<>));
-builder.Services.AddScoped(typeof(IAggregate<,>), typeof(Aggregate<,>));
-builder.Services.AddSingleton(typeof(IRabbitMqCQRSHelper), typeof(RabbitMqCQRSHelper));
-
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+//builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 builder.Services.AddOptions();
 
-builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql("Host=pgdb;Port=5432;Database=MovieBusinessDB;Username=root;Password=root"));
+builder.Services.AddSQLDatabase("Host=pgdb;Port=5432;Database=MovieBusinessDB;Username=root;Password=root");
 
 builder.Services.AddQuartz(q =>
 {
@@ -51,6 +36,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
+app.UseCore();
+app.UseRabbitMq();
+app.UseSQLDatabase();
 
 app.MapControllers();
 

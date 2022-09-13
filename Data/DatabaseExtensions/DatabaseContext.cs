@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Models;
+using Models.Entities;
+using Models.OutboxEntities;
 
 namespace DatabaseExtensions
 {
